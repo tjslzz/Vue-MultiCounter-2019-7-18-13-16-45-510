@@ -1,26 +1,26 @@
 <template>
   <div id="app">
-    <p>{{counter}}</p>
-    <button @click="counter ++">点我+</button>
-    <button @click="counter --">点我-</button>
-    <button @click="extra">抽方法</button>
-  </div>
+    <img alt="Vue logo" src="./assets/logo.png">
+    <h3>请输入数字  <input type="text" v-model.number="counter" v-on="sum=counter*8"></h3>
+    <div v-for="item in counter" v-bind:key = "item.key">
+      <count v-on:addnum="sum++" v-on:subnum="sum--"></count>
+    </div>
+    <h2>总数：{{sum}}</h2>
+    </div>
 </template>
-
 <script>
+import count from './components/count.vue';
 export default {
   name: 'app',
   data:function(){
     return {
-      counter : 0
+      counter : 0,
+      sum:0,
     }
   },
-  methods:{
-    extra : function(){
-      this.counter == "抽方法" ? this.counter = 0 : this.counter = "抽方法";
-    }
-  }
+  components : {count}
 }
+
 </script>
 
 <style>
