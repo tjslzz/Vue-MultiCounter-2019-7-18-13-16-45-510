@@ -3,7 +3,7 @@
     <img alt="Vue logo" src="./assets/logo.png">
     <h3>请输入数字  <input type="text" v-model.number="counter" v-on="sum=counter*8"></h3>
     <div v-for="item in counter" v-bind:key = "item.key">
-      <count v-on:addnum="sum++" v-on:subnum="sum--"></count>
+      <count v-on:addnum="sum+=$enent" v-on:subnum="sum-=$enent"></count>
     </div>
     <h2>总数：{{sum}}</h2>
     </div>
