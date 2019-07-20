@@ -7,14 +7,17 @@
 </template>
 <script>
 export default {
-    name: 'each',
+  name: 'each',
   data:function(){
     return {
       count : 8,
     }
   },
   mounted(){
-      this.$emit('addnum',8);
+      this.$emit('addnum',this.count);
+  },
+  destroyed(){
+    this.$emit('subnum',this.count);
   }
 }
 </script>
